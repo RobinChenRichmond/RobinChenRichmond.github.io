@@ -1,0 +1,4 @@
+[29-Sep-2022 04:07:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/guanyuchen/public_html/web_game/phpAjax/fetchInfo.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/guanyuchen/public_html/web_game/phpAjax/fetchInfo.php on line 2

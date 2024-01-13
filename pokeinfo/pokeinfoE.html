@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="jquery.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guanyu's World</title>
+  <link rel="stylesheet" href="/assets/site.css?t=1450775550">
+  <link rel="stylesheet" href="/assets/font.css?t=1437645997">
+  
+<style>
+button {
+     background:none!important;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     border-bottom:1px solid #444; 
+     cursor: pointer;
+}
+</style>
+
+<script>
+function purePlay(){
+	$('#introTwo').empty();
+	if($('#introduction:contains("for fun")').length > 0){
+		$("#introduction").empty();
+		$('#purePlay').html("Just want to have fun.");
+	} else{
+		 if($('#eventTable tr > td:contains("How to catch a pokemon more easily")').length > 0){
+			$('#pokeDex').html("Collect pokedexes and catch them all!");	
+		} else if($('#eventTable tr > td:contains("gyms")').length > 0){
+			$('#takeGym').html("<span style='text-decoration:line-through;'>Dominate Richmond</span> Train pokemons and take gyms.");
+		} else if($('#eventTable tr > td:contains("incense")').length > 0){
+			$('#useItems').html("Learn how to use items in their best ways.");
+		}
+		
+		$("#eventTable tr").remove();
+		$("#introduction").empty();
+		
+		$('#introduction').append("<h3>Play for fun</h3>Just a reminder: This game is a BATTERY KILLER, so be sure to have a battery bank and set the game in battery saver mode while playing.<br><h3>Battery Saver Mode</h3>Open the battery saver mode in setting, then put your cellphone upside down to open the screen saver and save some battery while you are not catching pokemons or taking gyms. It will notify you with vibration if you encountered a pokemon.");
+		$('#purePlay').html("Close the menu.");
+		
+	}
+}
+
+function pokeDex(){	
+	$('#introTwo').empty();	
+	if($('#eventTable tr > td:contains("How to catch a pokemon more easily")').length > 0){
+		$("#introduction").empty();
+		$("#eventTable tr").remove();
+		$('#pokeDex').html("Collect pokedexes and catch them all!");
+	}else{	
+		if($('#eventTable tr > td:contains("gyms")').length > 0){
+			$('#takeGym').html("<span style='text-decoration:line-through;'>Dominate Richmond</span> Train pokemons and take gyms.");
+		} else if($('#introduction:contains("for fun")').length > 0){
+			$('#purePlay').html("Just want to have fun.");
+		} else if($('#eventTable tr > td:contains("incense")').length > 0){
+			$('#useItems').html("Learn how to use items in their best ways.");
+		}
+		
+		$("#introduction").empty();
+		$("#eventTable tr").remove();
+		
+		$('#introduction').append("<h3>Collecting Pokedexes</h3>If you don't know what is battery saver mode, move to the first menu.<br>Pokmon Go now contains all 151 kinds of pokemons in its first generation. However, since Mew, Mewtoo, Ditto and the three Legendary Birds are currently unavailable, for players there're only 145 collectable pokedexes.");
+
+		$('#eventTable > tbody').append("<tr><td><button input id='pda' type='button' onclick='pda()'>1.How to catch a pokemon more easily？</button></td></tr><tr><td><button input id='pdb' type='button' onclick='pdb()'>2.Get a pokemon：Catch/Evolve/Hatch/Region Exclusive</button></td></tr><tr><td><button input id='pdc' type='button' onclick='pdc()'>3.How level matters in catching a pokemon</button></td></tr><tr><td><button input id='pdd' type='button' onclick='pdd()'>4.Hatching list: Which kind of egg do you want?</button></td></tr><tr><td><button input id='pde' type='button' onclick='pde()'>5.Eevee easter egg: Eeveelutions</button></td></tr>");
+		
+		$('#pokeDex').html("Close the menu.");
+	}
+}
+	
+function pda(){
+	$('#introTwo').html("<h3>What matters?</h3>Every pokemon has its unique catch rate and flee rate, and this will be influenced by the level of pokemon and the the level of trainer (needs proof). Besides, berries, different kinds of balls, radius of the circle while hit the pokemon, and if you get a Nice/Great/Excellent are all possible factors. For now, most players believe that curve ball doesn't matter the catch rate.<h3>Most Important：Radius of Circle</h3>Proved, when you hit the pokemon with a pokeball, the smaller the radius of circle, the higher the catch rate would be. Proved by unauthority, the highest catch rate could be almost as twice as the lowest catch rate. Nevertheless, Nice/Great/Excellent actually does not affect the catch rate, or just make a 0%-5% difference. Berries surely increases the catch rate, and someone says it's a 50% improvement. Better pokeballs have different kinds of improvement towards catch rate, and details could be found online. Thus, if you want more pokedexes or just eagerly want a certain pokemon, just use both berries and the best pokeballs, and keep the circle as small as possible, and finally try throwing an Excellent, which is the least important. There's an interesting case in pokemon, which is Abra, with 99% flee rate. Undoubtedly if you want catch an Abra, you almost have to make it with your first ball.");
+}	
+
+function pdb(){
+	$('#introTwo').html("<h3>Many ways to get a pokemon</h3>Catching is the most basic way, and everyone knows that regions matter the kinds of pokemons in a way. What's more, more prosperous and crowded cities (like the hateful NYC) has higher spawn rate for pokemons, which provides extremely high initial superiority to players there.<br>But trying encountering every pokemon is obviously not the only way to catch them all, and there're many better ways.<h3>Hatching</h3>There're 3 kinds of eggs, 2km, 5km, 10km, and each kind of eggs can hatch some exclusive pokemons. The union set of available pokemons for all these 3 kinds of eggs is just all available pokemons (before evolving). In another word, except the region exclusives (talked later), you can get all pokemons just by keep hatching eggs! And since hatching provides lots of candies and stardust based on different kinds of eggs, it also helps a lot to potential evolving you may need.<br>And here's the obvious disadvantage: You have to pay time and your legs, and this explains why Incubators is the best item to buy.<h3>Evolving</h3>Unnecessary for too much explanation, collecting candies and evolving is the best way to get pokedex of evolved pokemon since their spawn rate is quite low (Candies also explains advantage of Incubators).<h3>Region Exclusive</h3>There're 4 kinds of pokemons which only spawn in specific continents<br>Tauros：North America Mr. Mime：Europe Farfetch'd：Asia Kangaskhan：Australasia <br>Though there's rumour saying you can hatch region exclusives no matter where you are, the rumour was debunked by Niantic CEO John Hanke in Sep22 2016 with tweet 'only eggs in exclusive regions may hatch region exclusive pokemons'");
+}
+
+function pdc(){
+	$('#introTwo').html("<h3>How level matters to people who just want pokedexes</h3>For pokedex collecters, level does not matter much. but it do influences several things, and you could balance the advantages and disadvantages by yourselves.<h3>Advantages</h3>Though high level is useless, since only after level 20 players could use the best pokeball, ultra ball, which increases the catch rate a lot, players are recommended to reach level 20 even just for unlocking these items（berries，great balls，ultra balls. And after level 20 there's no items which could help catch pokemon more easily. And another unproved opinion is that trainers with higher level would catch pokemons slightly more easily.<h3>Disadvantages</h3>Here's a quite explicit disadvantage: Players are probably to encounter a unknown pokemon with also higher leve, which make the catch rate much lower. That's why many players are so happy to see a CP10 Pidgey. There're even some players that try to level up slower, but I don't recommended that since that's a too narrow and radical way to go.");
+}
+
+function pdd(){
+	$('#introTwo').html("<img src = 'eggHatch.png' name = 'pic' alt = 'egg' style='width:900px;height:500px;'>");
+}
+
+function pde(){
+	$('#introTwo').html("Eevee is a fierce beast in gym battle, also a normal pokemon that everyone can easily get one. No matter if you have all eevee's pokedexes, you'd better know this easter egg. The important thing is: Be sure to strictly follw the steps.<br>First a clarification, the easter egg can only help you get one Vaporeon, one Flareon and one Joleon, and any rumour that says it works many times is just because of some lucky guys. Someone may succeeded twice, and failed the 3rd time, and claim that the easter egg doesn't work anymore-- This is wrong.<br>Steps：First, rename the eevee you want to evolve. Rainer for Vaporeon, Pyro for Flareon, Sparky for Jolteon。Remember the capital letter. Then close the game and reopen it. Finally evolve the right eevee, and remember, if you evolve Rainer and get a Vaporeon, it means that you cannot get Vaporeon with this easter egg anymore, but you can get Flareon and Jolteon.");
+}
+
+function takeGym(){
+	$('#introTwo').empty();	
+	if($('#eventTable tr > td:contains("gyms")').length > 0){
+		$("#introduction").empty();
+		$("#eventTable tr").remove();
+		$('#takeGym').html("<span style='text-decoration:line-through;'>Dominate Richmond</span> Train pokemons and take gyms.");
+	}else{	
+		if($('#eventTable tr > td:contains("How to catch a pokemon more easily")').length > 0){
+			$('#pokeDex').html("Collect pokedexes and catch them all!");
+		} else if($('#introduction:contains("for fun")').length > 0){
+			$('#purePlay').html("Just want to have fun.");
+		} else if($('#eventTable tr > td:contains("incense")').length > 0){
+			$('#useItems').html("Learn how to use items in their best ways.");
+		}
+		
+		$("#introduction").empty();
+		$("#eventTable tr").remove();
+		
+		$('#introduction').append("<h3>Train Pokemons</h3>Pokemons performance in battle are influenced by many other factors besides a cold CP number. Though players do not need to be captious to all these factors, picking a pokemon with good attributes in all aspect indeed helps you some in gym battle.<h3>Take Gyms</h3>First, it's quite easy to take a gym and quite hard to hold one, so don't be to serious to hold a gym. Since it not only may waste more potions, but also benefit you almost nothing. In a gym battle, there're many skills that attackers could make use of and just defeat a defender's pokemon with twice CP of the attacker's. After you take all gyms you want to take, be sure to claim your reward in the shop page, and then just forget the gyms since you can only claim reward every 21 hours (or just 1 day), which means keep holding a gym within 1 day don't provide you any extra reward.");
+		
+		$('#eventTable > tbody').append("<tr><td><button input id='tga' type='button' onclick='tga()'>1.The real power of a pokemon is consist of...?</button></td></tr><tr><td><button input id='tgb' type='button' onclick='tgb()'>2.How level matters to training pokemons? How to get a main force?</button></td></tr><tr><td><button input id='tgc' type='button' onclick='tgc()'>3.What are the skills in actual battle?</button></td></tr><tr><td><button input id='tgd' type='button' onclick='tgd()'>4.How to train gyms?</button></td></tr>tr><td><button input id='tge' type='button' onclick='tge()'>5.Difference from pokedexes collecters while catching pokemons.</button></td></tr><tr><td>Level is quite important, and please see 'How to use lucky eggs' for skill of leveling up</td></tr>");
+		
+		$('#takeGym').html("Close the menu.");
+	}
+}
+
+function tga(){
+$('#introTwo').html("<h3>A pokemon's performance in battle is influenced by...</h3>Mainly it's Combat Power (CP), level, skills and Individual Value (correlated to each other) (IV).<h3>Combat Power</h3>Every pokemon has 3 value to measure it's power: attack, defence and stamina. CP is the simplest way to measure a pokemon by its individual value, and it's easily understood with an algorithm: <br>CP = MAX(10, FLOOR(Stamina^0.5 * Attack * Def^0.5 / 10))<br>Someone may be curious about how Niantic design the IV for each pokemon, and it is proved that these 3 values are combined from the 6 individual values of the pokemon in generaion 6 by another algorithm. You can see the <a href='https://www.reddit.com/r/TheSilphRoad/comments/4t7r4d/exact_pokemon_cp_formula/'>Reddit link</a> for more details. Actually, though a high CP does mean that the pokemon is stronger, it cannot provide players with a complete comprehension to the pokemon, and we also needs the following factors: <h3>Level (Correlated to CP)</h3>You cannot see your pokemons' levels in the game, but we can guess or measure them base on several things: <br>1.a rule that pokemon's level must <= trainer's level + 1.5<br>2.Each time you power up, the level of pokemon will increase by 0.5.<br>Then we can guess the level of pokemon base on this sheet (the number of candies needed might be slightly different from actual):<br><img src = 'stardust.png' name = 'pic' alt = 'star' style='width:600px;height:500px;'><br>A high level of a pokemon means that its CP will also be comparatively high, and the stardust and candies you need to power it up each time will also keep increasing. After level 30, the benefit of power up will be reduced to half of before (like from 40CP/power up to 20CP/power up), and the cost will be quite high, which can be regarded as one of the penalty of a too high level.<h3>Skills (Important and unrelated to other attributes)</h3>Each pokemon has two kinds of skills: quick move and main move. And for most pokemons these two moves are randomly chosen between several possibilities. The difference of skills may influence the damage of pokemon by 10%-20% or even more; thus, skills are quite important for players who want to train a pokemon to be a core. CP can be increased by leveling up (power up), but skills cannot be changed by anyway when they are confirmed at the time you catch or evolve the pokemon. About if a quick move/main move is a good skill for a pokemon, you can view this website for the possible and best moveset combination for pokemons: <a href = 'https://pokemon.gameinfo.io/'>link of the website</a><br>This website also has many other practical functions, which would be talked about later. For now, when you open the page of each pokemon in this website, you can see the quick moves and main moves it own, and their<br>DPS: The total damage (after considering critical strike chance and 25% same type attack bonus)/the time this skill needs<br>However, in a gym battle even DPS cannot precisely determine a pokemon's damage, especally considering that you may need to dodge the enemy's skill. Thus never be too serious about these numbers, they mean something but not everything.<h3>Fluctuated Individual Value</h3>This is not known by most players, even after the update of appraisal system (you can click the appraisal button in the right bottom of a pokemon's panel)<br>Besides the fixed attack, defence and stamina values, each pokemon has three 0-15 fluctuated values for these three attributes. Example: Let's say a Lapras has attack be 200, defence be 210 and stamina be 220 when it is level 40. If it's final IV is just 200, 210, 220, we say it's IV is 0%; if it's final IV is 215, 225, 235, we say it's a 100% IV Lapras. In short, the fluctuated IV, or IV%, is just the sum of 3 fluctuated values divided by 45 (15*3).<br>Undoubtedly IV% unchangeably matters the power of a pokemon, which cause many players to mindlessly chase for a extremely high IV% one. But after research, we find that a 90% IV pokemon is just around 2% less powerful than a 100% IV one, and 80% IV is 4% less powerful, and 50% IV is 9% less powerful. Therefore IV% is so not as important as skills, or we can say you don't need to worry it at all as if the pokemon doesn't have a quite low IV%. Another explicit example: A 100% IV Gyarados with Twister main move is worse than a 0% IV Gyarados with Hydro Pump main move. What's more, <a href = 'https://pokemon.gameinfo.io/'>the website mentioned before</a> also provides a function to measure(atually list all the possibilities) the IV% of a pokemon, and this function is much improved after it combined the official appraisal system and could usually located the possible IV% to 2 or 1 possibilities. The function is in the 'IV calculator' page in the website.<br>About appraisal system, I think it's quite a practical function, since it's highest rank is over 80% IV, and for most pokemons it is already unnecessary to check the specific IV% in websites if the IV% is known to be over 80%. You can check the following graph for how to use the appraisal system: <br><img src = 'appraisal.png' name = 'pic' alt = 'appraisal' style='width:800px;height:400px;'><h3>Type Weaknesses and Resistant</h3>Will be mentioned in the skills in battle");
+}
+
+function tgb(){
+$('#introTwo').html("We have talked about level of pokemons in pokemons' performance in battle. And trainers' level can affect your pokemons a lot, as well.<br>First, since hatched pokemons has all it's three fluctuated IV be random values in 10-15 rather than 0-15, it's much more possible to get a nearly perfect pokemon by hatching eggs. The level of hatched pokemon can be from 1 to 20, but cannot exceed the trainer's level, which means a trainer with low level will need more stardust and candies to power up it's hatched pokemon (if he get one with good IV%).<br>High level also has advantages while catching pokemons. Since the highest level of pokemons appear outside is 30, and it cannot exceed the trainer's level, getting a good pokemon with high level surely save you lots of stardust and candies.<br>You can also unlock some new items after reaching certain level, like ultra ball, max potion, or even max revive in lv30.<h3>Train your core pokemon</h3>As said, the most important things for a core pokemon is that it should a have a great or best moveset, a not too low level (so that you don't need to pour huge amount of stardust), and also good IV%. The initial potential of the pokemon surely must be considered, since a ratata has exactly no value to train no matter its IV% or moveset. And, training low level pokemon is not rediculous, but just needs to consider more: Like if you may meet some similar pokemon with similar IV%, moveset and higher level, and if the pokemon itself has extraodinary potential. For example, I would like to train a lv1 100% IV Snorlax with perfect moveset, but would not like to train a lv10 perfect Gyarados, though Gyarados is also quite powerful: I have other powerful water type pokemons, and I could easily find Magikarps (maybe with high IV% and level), thus I would absolutely give up a Gyarados usless I have tooooo much stardust.<br>For the new players, my suggestion is: DO NOT use stardust to power up any pokemon, and try to find a perfect one to be your core after lv20 (since it's easy to find a good one from hatching), and FIRST evolve it to its last phase to make sure it also has a good moveset, and then consider about pouring your stardutst to the pokemon.");
+}
+
+function tgc(){
+$('#introTwo').html("<h3>Skills in Battle</h3>There's almost no skills for defenders since they are controlled by AI. Since I do not suggest trying one's best to defend, it's better for players to just put some low CP defenders. If you want to take n gyms, you may put your high CP ones in the first n-1 gyms to let them hold the gym longer.<br>There're many skills for attackers: First the quick move just need you to click the screen frequently and fast, and when you attack and get attacked you energy bar in top left will get filled. Based on different main move the energy bar may be one or more, and you can use your main move by pressing on the screen and holding when at least one energy bar is full. Usually, high damage main move has only 1 energy bar with 100 space, while medium damage ones may have 2 bars with 50 space each, some with three 33 space bars. etc.<br>Mention: Using your main move (by holding) during your quick move (especially slow ones) may fail because of haven't finish the quick move before using the main move. This will waste some of your time to do damage, so be careful to use your main move during the interval of your quick move.<br><h3>Type Weaknesses and Resistant</h3>In Pokemon Go, skills with type strong with enemy pokemon will get 25% bonus damage, while ones weak with enemy will get 20% less damage. You can check the detail in the websited mentioned before: <a href = 'https://pokemon.gameinfo.io/'>link of the website</a><br>How to check type: click on the Move page, while putting your mouse on any type you can find which types of pokemon is this type of skills strong with or weak with. Click on the Pokemon page, while putting your mouse on any type you can find which types of skills is this pokemon resistant to or weak to.<br><h3>Dodge</h3>This is the most essential skill in battle, since a successful dodge will let you take only 25% of original damage, which is quite useful against high damage main moves. Of course, since dodge also takes you some time, it does not mean it's 4 times easy than not dodging. Different moves has different intervals for dodge, which in game is like a flash with special animations. After you master this skill, dodge would become a usual thing in your gym battles, and you can gradually find how many times your pokemon could attack before dodging enemy's next attack. Vaporeon is one of the best pokemon to train dodge because it's water gun could attack per only 0.5s, so you will find it quite easy to stop your action and dodge enemy's attack. Vaporeon could even attack 4 times vs a Dragonite with steel wing, which is one reason that Vaporeon is so overpower now.<br>Mention: Blizzard is the only skill that has no dodge window, which means it can not be dodged. Therefore Lapras, Cloyster and Dewgong with Blizzard are sometimes much stronger than you think.<br><h3>Trick</h3>Defender's quick move will be 1-2 seconds slower than usual, which means you may attack twice and dodge even against a really fast quick move like water gun. But defenders will consecutively attack twice at the beginning of battle, with no intervals between this double attack, and it may be a good choice to first stay calm and dodge this double attack especially if you are attacking a defender with high damage.");
+}
+
+function tgd(){
+$('#introTwo').html("<h3>Train gyms</h3>With wrong method, training gyms could be long and boring, while with right method it could be just boring.<br>After your teammate take some gyms, if you also want to hold it, you may have to train it to make the gym level up and have more space. However, since you could only use 1 pokemon to train the gym, usually you will be defeat after win 1 or 2 of teammates' pokemons (or you could just run after win 1 or 2). Then you will be told that you failed and you will get exp and the gym will get presige, since you did win 1 or 2 battles.<br>A wrong method is to use your high CP pokemon to train the gym with your teammates' low CP ones, which will give the gym 100 presige each time you win a battle. It means you have to train 20 times with 1win or 10 times with 2 wins even just to get 2000 prestige, which only let a low level gym to level up.<br>Right method is to use your even lower CP pokemon to fight the lowest CP one of your teammates', and run after you win. You could easily win a higher CP pokemon with strong type and frequent dodge, and then the gym could get several hundreds of prestige or even 1000. With this method you could level up the gym with only several times of training, though naturally nobody want to train a gym if it's not necessary.");
+}
+
+function tge(){
+$('#introTwo').html("<h3>Possible to train a pokemon appears outside</h3>As a player who always seeks for potential pokemon to train, one of the difference from the pokedex collecters is that you would keep catching almost all pokemons even if you already have lots of them. Not only for evolving, but also for finding one with higher IV% and better moveset. For pokemons without evolving, especially ones that are powerful (like Lapras, Snorlax etc.), both IV% and moveset are already fixed at the time you catch them, and you must want to find a better one if the one you get is not worth training (Surely 10km eggs are much more reliable). For pokemons that could evolve, IV% may be the most important, since you could only know the moveset after you evolve them.<br>Mention: Any pokemon appear outside in a specific location has absolutely same IV% and moveset for all players there to catch it. For example: Two people walk together and meet a Snorlax and they both catch it, then these two Snorlax may have different level, but must have the same IV% and moveset.<br>What's more, I will mention agian that even if the IV% is high, players should better consider if the level is too low. Stardust is much more valuable than many players think, and it's probable that someone use much stardust to train some common pokemons and have no stardust when he really meet some powerful ones.");
+}
+
+
+function useItems(){	
+	$('#introTwo').empty();
+	if($('#eventTable tr > td:contains("incense")').length > 0){
+		$("#introduction").empty();
+		$("#eventTable tr").remove();
+		$('#useItems').html("Learn how to use items in their best ways.");
+	}else{	
+		if($('#eventTable tr > td:contains("How to catch a pokemon more easily")').length > 0){
+			$('#pokeDex').html("Collect pokedexes and catch them all!");
+		} else if($('#introduction:contains("for fun")').length > 0){
+			$('#purePlay').html("Just want to have fun.");
+		} else if($('#eventTable tr > td:contains("gyms")').length > 0){
+			$('#takeGym').html("<span style='text-decoration:line-through;'>Dominate Richmond</span> Train pokemons and take gyms.");
+		}
+		
+		$("#introduction").empty();
+		$("#eventTable tr").remove();
+
+		$('#eventTable > tbody').append("<tr><td><button input id='uia' type='button' onclick='uia()'>1.How to use Incubators</button></td></tr><tr><td><button input id='uib' type='button' onclick='uib()'>2.How to use lucky eggs (to level up quickly!)</button></td></tr><tr><td><button input id='uic' type='button' onclick='uic()'>3.How to use incenses</button></td></tr><tr><td><button input id='uid' type='button' onclick='uid()'>4.Short discription for Lure Module</button></td></tr><tr><td><button input id='uie' type='button' onclick='uie()'>5.How to manage my pokecoins</button></td></tr>");
+		$('#useItems').html("Close the menu.");
+	}
+}
+
+function uia(){
+$('#introTwo').html("<h3>How to use Incubators</h3>In pages before there's words that incubators are best items to buy.<br>Let's say we have infinite incubators, then we can only decide which egg to hatch and when to hatch. Since hatching eggs give you 200, 500, 1000xp, for players who want to level up, it is a good choice to get the egg hatched when you are using a lucky egg. If you have several incubators, you'd better use them to hatch some eggs in same kind in the same time, and thus you can use your lucky egg when they are all almost hatched.<br>Another notice for all players: If you hatch a 2km egg with an incubator, it means it saves 2 kim for you; if you hatch a 10km egg with it, it saves 10km for you. The conclusion is quite clear. Someone may say it's hard to get a 10km egg, then just choose 5km ones.");
+}
+
+function uib(){
+$('#introTwo').html("<h3>How to use lucky eggs (or leveling up)</h3>The way to level up is not by 500xp for catching new pokemons, or 1000xp for hatching a 10km egg, or 100xp for throwing an Excellent. It's by evolving dozens of Pidgeys to get like 500xp*60.<br>Pidgeys may be caterpies, weedles ore ratatas, but the similarity is that they spawns a lot and they are useless. They can be other pokemons that you have lots of candies and you could evolve. Each pidgey needs 12 candies to evolve, and return you 1 after evolving, and return you another 1 when you transfer the pidgeotto. Thus it's just 10 candies for evolving a pidgey, and each time you catch 2 pidgeys, you can keep the 3rd for transfering.<h3>Step by Step</h3>The key is not just to catch pidgeys, but to make good use of lucky eggs. When you have several eggs nearly hatched, use a lucky egg, and begin to evolve all your stores pidgeys and other pokemons (better be at least more than 60).<br>Basically people think you can get around 60 pokemons evolved, which means 30s for one, and get 30000+30000=60000 exp. But you can also skip the animation by directly close and reopen the game, which takes only around 20s, and there's people got 80 or even 111 evolved.<h3>Two Keys</h3>Catch more pidgeys or other pokemons that only needs 12 candies to evolve (weeldes and caterpies), and don't evolve your pokemons until you have enough pokemons to evolve (if you have a lucky egg).");
+}
+
+function uic(){
+$('#introTwo').html("<h3>How to use incenses</h3>Wrong opinion：Incenses may attract pokemons nearby.<br>How it actually works: stay in one place will let the incense to get you an extra pokemon per 5 min (in total 6 more pokemons for 30 min), and the kind of pokemon may be related to the region. However, it's a new pokemon just for you, not an originally existed nearby pokemon. If you see a dragonite nearby you cannot get it just by using an incense and wait.<br>However, when you moves fast (200m/min), the incense will get you 1 pokemon per minute, in toal 30 more pokemons for 30 min.<br>Many ones may think that it's a great thing to use in a car, but the temporary soft ban mechanism in Pokemon Go will prevent you from catching any pokemons just like you were banned. So if you find that several pokemons all flee after you throw your first ball, if means you may move too fast and get temporarily banned. This is kind of embarassing, since it's hard to use incenses while biking, and it's easily banned while in a car, so maybe you can only stay in a slow tour bus to let the incense bring 30 pokemons for you.<br>Another trick for incense: If you are in a place where there's nothing in your sightings and there's almost no pokestops nearby, let's say a road between cities, incense may bring you many rare pokemons.");
+}
+
+function uid(){
+$('#introTwo').html("<h3>Lure Module</h3>Nothing much to say, 30 min, similar to incenses, get you a pokemon per 5 min around, which is 6 more pokemons in total. It is more expensive but it is a team buff.");
+}
+
+function uie(){
+$('#introTwo').html("<h3>Use your pokecoins correctly</h3>This game is quite friendly to urban players, and there's not much need to buy coins. And, you can easily get like 20 coins per day by taking gyms. But no matter if you pay for coins or just get coins from gyms, it is necessary to use them in the right way.<br>First, based on pesonal opinions some players may want to enlarge their backpack capacity or pokemon capacity. That's fine, and my suggestion is pokemon capacity is usually enough since you can transfer your useless pokemons, but you will feel comfortable if you have a larger backpack.<br>Some players may want to buy some lucky eggs, and that's feasible choice, and necessary choice for ones who want good pokemons rather than just pokedexes. However, just around 20 or at most 30 lucky eggs are quite enough.<br>Lure modules and incenses are not recommended, especially for players with not many coins, since that's similar to just wasting the coins. In 'How to use incenses' we know that incenses do have some interesting mechanisms but it's really hard to make it effective.<br>Therefore, after buying small amount of lucky eggs, backpack capacities, or pokemon capacities, the best thing to buy is still Incubators. Collecting pokedexes, finding pokemons with high IV, or getting more candies, or whatever, Incubators are just the best items.");
+}
+
+</script>
+
+</head>
+  
+<body>
+<header id="header">
+    <div class="container yue">
+      <a id="brand" href="/">
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<svg width="24px" height="24px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	        <path d="M156.613464,113.999999 L235.90968,113.999965 C233.495105,53.9540791 182.972141,6 121,6 C57.4872506,6 6,56.3679626 6,118.5 C6,180.632037 57.4872506,231 121,231 C182.627716,231 232.933165,183.577472 235.86497,124.000065 L235.864973,124 L156.613465,124 C154.053154,140.407155 139.083693,153 121,153 C101.117748,153 85,137.777682 85,119 C85,100.222318 101.117748,85 121,85 C139.083692,85 154.053154,97.5928448 156.613464,113.999999 Z" id="Oval-1" fill="#623473"></path>
+	</svg>
+	<strong>Guanyu's Cabin</strong>
+      </a>
+      <nav id="nav">
+          <a href="pokeinfo.html">中文版</a>
+          <a href="pokeinfoE.html">English</a>
+      </nav>
+    </div>
+  </header>
+
+<div class="entry-header">
+  <div class="container">
+    <h1 class="entry-title" itemprop="name">Pokemon Go Guide</h1>
+  </div>
+</div>
+
+<article id="main" role="main" class="hentry yue" itemscope itemtype="http://schema.org/Article">
+<div class="entry-content container" itemprop="articleBody">
+<h2>How do you want to Pokemon GO?</h2>
+
+<table id = "questions" style="width:100%">
+  <tr>
+    <td><button input id="purePlay" type="button" onclick="purePlay()">Just want to have fun.</button></td>
+  </tr>
+  <tr>
+    <td><button input id="pokeDex" type="button" onclick="pokeDex()">Collect pokedexes and catch them all!</button></td>
+  </tr>
+  <tr>
+    <td><button input id="takeGym" type="button" onclick="takeGym()"><span style='text-decoration:line-through;'>Dominate Richmond</span> Train pokemons and take gyms.</button></td>
+  </tr>
+  <tr>
+    <td><button input id="useItems" type="button" onclick="useItems()">Learn how to use items in their best ways.</button></td>
+  </tr>
+</table>
+
+<div id = "introduction">
+</div>
+
+<table id = "eventTable" style="width:80%">
+<tbody>
+</tbody>
+</table>
+
+<div id = "introTwo">
+</div>
+
+<br><br><br>
+<a href = "/">back to the homepage</a>
+
+</div>
+</article>
+</body>
+</html>
