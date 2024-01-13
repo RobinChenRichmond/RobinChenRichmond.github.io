@@ -1,3 +1,95 @@
-# Hello, this is Robin Chen.
-<p> test p </p>
-<a href="http://www.baidu.com/">baidu</a>
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Guanyu's Cabin</title>
+
+  <link rel="stylesheet" href="/assets/site.css?t=1450775550">
+  <link rel="stylesheet" href="/assets/font.css?t=1437645997">
+</head>
+<body>
+  <header id="header">
+    <div class="container yue">
+      <a id="brand" href="/">
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<svg width="24px" height="24px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	        <path d="M156.613464,113.999999 L235.90968,113.999965 C233.495105,53.9540791 182.972141,6 121,6 C57.4872506,6 6,56.3679626 6,118.5 C6,180.632037 57.4872506,231 121,231 C182.627716,231 232.933165,183.577472 235.86497,124.000065 L235.864973,124 L156.613465,124 C154.053154,140.407155 139.083693,153 121,153 C101.117748,153 85,137.777682 85,119 C85,100.222318 101.117748,85 121,85 C139.083692,85 154.053154,97.5928448 156.613464,113.999999 Z" id="Oval-1" fill="#623473"></path>
+	</svg>
+	<strong>Guanyu's Cabin</strong>
+      </a>
+      <nav id="nav">
+          <a href="/chn.html">中文版</a>
+          <a href="/">English</a>
+      </nav>
+    </div>
+  </header>
+    <article id="main" role="main" class="hentry yue" itemscope itemtype="http://schema.org/Article">
+<div class="entry-header">
+  <div class="container">
+    <h1 class="entry-title" itemprop="name">About Me</h1>
+    <p class="entry-description" itemprop="headline">A software engineer and learner.</p>
+  </div>
+</div>
+
+<div class="entry-content container" itemprop="articleBody">
+    <p>Hi! My name is <strong>Guanyu Chen</strong> (or <strong>Robin</strong>).</p>
+<blockquote><p>I graduated from University of Richmond and Cornell University, and am working in Microsoft as a Software Engineer.</p>
+</blockquote><h2>Contact</h2>
+<p>I am currently living in Kirkland, WA <br>You can reach me by</p>
+<ul>
+<li><a href="mailto:guanyuc1995@gmail.com">guanyuc1995@gmail.com</a></li>
+<li><a href="https://www.linkedin.com/in/guanyu-chen-60906785">LinkedIn</a></li>
+</ul>
+<h2>Projects</h2>
+
+<!--
+Just a test for javascript
+
+<script>
+var person = {name: "chenguanyu", "age": 21};
+document.write(person.name);
+document.write(person.age);
+</script>
+-->
+
+<h3><a href="https://github.com/RobinChenRichmond/RF-Signal-Model">Signal Modulation Classification Model</a></h3>
+<p>During my first semester at Cornell (2017 fall), Yuena, Hari and me helped solve AMC (Automatic Modulation Classification) problem for MITRE Corporation from Machine Learning approaches. <br>We worked in Python with Keras library and try solving the problem from two approaches, and finally my new model improved the accuracy by 6% in total and by 12% for normal data.</p>
+
+<h3><a href="web_game/rpg.html">Guanyu's web game playground</a></h3>
+<p>This is a web role-playing game as extension of my interest in the Database course. Originally coded in Java, the game supported with database is now ported online and further designed by me and my partner Puran.</p>
+
+<h3><a href="https://github.com/RobinChenRichmond/Image_Autocrop">Summer Research 2015: Image Autocrop Tool</a></h3>
+<p>Worked on Image Classification with dataset of different kinds of birds in 2015 Summer and focused on pre-processing part of the pipeline, I finally built the program that does the autocrop job for all input bird images, which improves considerable accuracy in total. Details in Github link.</p>
+
+<h3><a href="https://github.com/RobinChenRichmond/BirdID_lasagne">Summer Research 2016: Improvement of CNN Program</a></h3>
+<p>This program is forked from the Github repository of Dinc, a group member in 2015 Summer Research. As a Image Classification Program works in machine learning way, it uses Convoluted Neural Network to train and improve the ability of machine. What I did is adding methods to enlarge the training set of the neural network, which leads to the improvement of accuracy. Details in Github link.</p>
+
+<h2><a href = "pokeinfo/pokeinfoE.html">Pokemon Go Guide</a></h2>
+<p>This is a guide page for new players of Pokemon Go. It both introduces the game and provides lots of skills to help you make more right choices. Both Chinese and English supported.</p>
+
+<br><br><br>
+
+  <div class="entry-extra container">
+  </div>
+  
+</div>
+</article>
+
+<script>
+var images = document.getElementsByTagName('img');
+if (images.length) {
+	for (var i = 0; i < images.length; i++) {
+	var src = images[i].getAttribute('data-src');
+	if (src) images[i].src = src;
+	}
+}
+</script>
+<footer id="footer">
+<div class="container">
+<p>&copy; Copyright 2018 by Guanyu Chen</p>
+</div>
+</footer>
+<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
+</body>
+</html>
